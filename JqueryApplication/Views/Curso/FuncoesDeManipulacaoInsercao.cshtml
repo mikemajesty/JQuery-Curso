@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "FuncoesDeManipulacaoInsercao";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Funcoes De Manipulacao Insercao</h2>
+
+
+<div class="teste" id="d1">
+    <span>Mike Rodrigues de lima</span>
+    <p class="teste">Paragrafo com classe</p>
+    <p>Paragrafo</p>
+    <p>Paragrafo</p>
+    <p>Paragrafo</p>
+    <br />
+</div>
+<button type="button">Testar</button>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('button').click(function () {
+
+            if ($('p').parent().is('div')) {
+                $('p').unwrap('.teste');
+            }
+         
+            //remove a tag do formulario onde for um
+            //paragafo e contenha uma classe teste
+            //$('p').remove('.teste');
+            //retira a tag que envolve o paragrafo com a classe teste
+           
+
+        });
+    });
+</script>
+<style type="text/css">
+    .teste{
+         
+         border: 1px solid red;
+    }
+</style>

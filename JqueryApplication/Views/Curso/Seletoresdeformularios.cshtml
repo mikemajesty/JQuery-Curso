@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Seletoresdeformularios";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Seletoresdeformularios</h2>
+
+ <a href="#" name="link1" >Link 1</a>
+<a href="#" name=" link ">link 2</a>
+<a href="#" name="link3">Link 3</a>
+<a  href="#" id="lnk">Link 4</a>
+<a  type="text/asp" href="#">Link 5</a>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //adiciona um stilo a tag que possui o name [link1]
+        $('a[name=link1]').css('color', 'red');
+        //adiciona um stilo a tag que possui que contenha [link]
+        $('a[name*=link]').css('color', 'red');
+        //adiciona um stilo a tag que possui um espaço entre o atributo name~=[link]
+        $('a[name~=link]').css('color', 'blue');
+        //adiciona um stilo a tag que possui um id=[]
+        $('a[id=lnk]').addClass('btn-primary');
+        //adiciona um stilo a tag que possui um type=[]
+        $('a[type="text/asp"]').addClass('btn-primary');
+    });
+</script>

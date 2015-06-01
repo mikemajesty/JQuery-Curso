@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "MudarClasse";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<input id="txt3" type="text" placeholder="Nome" class="form-control-static" value="Mike Lima" />
+<input id="txt4" type="text" placeholder="Senha" class="form-control-static" value="Natali Marques" />
+<br />
+<input id="btnMudarCor" type="button" value="Mudar Cor" onclick="MudarCor();" class="btn btn-success" />
+
+
+<script type="text/javascript">
+    function MudarCor() {
+        $('#txt3').addClass("form-control");
+        $('#txt4').addClass("form-control");
+    }
+</script>

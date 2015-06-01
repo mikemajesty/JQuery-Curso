@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "Selecionandocamposdotipocheckbox";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2 class="well">Selecionando campos do tipo checkbox</h2>
+
+
+<form>
+    <h2>Meu Email DevMedia</h2><br />
+    <input class="btn" id="select" type="button" value="Selecionar Todos"/>
+    <input class="btn" id="unselect" type="button" value="Deselecionar Todos" />
+    <br />
+    <input  type="checkbox" name="todos" id="todos"/>Todos
+    <br />
+    <table cellpadding="10" class="table">
+        <tr>
+            <td>
+
+               
+               <input  type="checkbox" name="email"/>
+            </td>
+            <td>
+              
+                <span>Fatura online banco do Brasil</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="checkbox" name="email" />
+            </td>
+            <td>
+                
+                <span>Sua senha foi resetada</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="email" />
+            </td>
+            <td>
+
+                <span>Sua senha foi resetada</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="email" />
+            </td>
+            <td>
+
+                <span>Sua senha foi resetada</span>
+            </td>
+        </tr>
+    </table>
+
+</form>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+     
+        $('#select').click(function () {
+            //atrelamos uma propreidade ja setada como parametro
+            //buscanco pelo name, quem atrela e a tag attr
+            //que passa 1 uma propriedade e em seguida o modificador
+            $(':input[name=email]').attr('checked', 'checked');
+        });
+        $('#unselect').click(function () {
+            //buscanco pelo name, quem atrela e a tag attr
+            $(':input[type=checkbox]').removeAttr('checked');
+        });
+        //evento change é disparado quando um valor muda
+        $('#todos').change(function () {
+            if (this.checked) {
+                $('table :input[name=email]').attr('checked', 'checked');
+            }
+            else {
+                $('table :input[name=email]').removeAttr('checked');
+            }
+        });
+
+    });
+</script>
+<style type="text/css">
+  .body{
+      font-family: 'Segoe UI';
+      padding: 20px;
+  }
+ 
+</style>

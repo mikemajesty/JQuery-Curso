@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "dicadeformulario";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2 class="well">dicas de formularios</h2>
+
+<form>
+    <table cellpadding="10">
+        <tr>
+            <td>
+                Usuaio:
+            </td>
+            <td>
+               <input type="text" name="user" />
+                <span >Usuario obrigatorio!</span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                Senha:
+            </td>
+            <td>
+                <input type="text" name="pwd" />
+                <span>Senha obrigatorio!</span>
+            </td>
+        </tr>
+    </table>
+   
+</form>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //exibe uma menssage ao ter o foco do input
+        $('span').css({'display':'none','color':'red','padding':'5px'});
+        $(':input').focus(function () {
+            //o metodo show pode ser substituido pelo fadeIn
+            $(this).next().show();
+            $(this).addClass('input');
+        });
+        //retira uma menssage ao ter ao perder o do input
+        $(':input').blur(function () {
+
+            
+            //o metodo show pode ser substituido pelo fadeOut
+            $(this).next().hide();
+            $(this).removeClass('input');
+        });
+    });
+</script>
+<style type="text/css">
+    .input{
+        border: 2px solid red;
+    }
+</style>

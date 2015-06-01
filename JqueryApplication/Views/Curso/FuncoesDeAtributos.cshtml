@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "FuncoesDeAtributos";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Funcoes De Atributos</h2>
+
+<form>
+    <label>Nome:</label>
+    <input type="text" />
+    <br />
+    <label>Senha:</label>
+    <input type="password" />
+    <br />
+    <label>Sexo</label>
+    <br />
+    <input type="radio" name="s" value="Masculino" />Masculino
+    <br />
+    <input type="radio" name="s" value="Feminino" />Feminino
+    <br />
+    <label>Arquivo</label>
+    <input type="file" value="Escolher Arquivo" />
+    <br />
+    <label>Estado Cívil</label>
+    <br />
+    <input type="checkbox" checked="checked" class="teste" />Casado<br />
+    <input type="checkbox" />Solteiro<br />
+    <input type="checkbox" />Viuvo<br />
+    <input type="submit" value="Submit" />
+    <input type="reset" value="Resete" />
+    <input type="button" value="Button" id="mike"/>
+    <br />
+    <br />
+    <br />
+    <br />
+    <select>
+        <option>Brasil</option>
+        <option>Portugal</option>
+        <option>Alemanha</option>
+        <option>Chile</option>
+    </select>
+    <br />
+    <br />
+    <textarea></textarea>
+</form>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(':button').click(function () {
+            //pega um tipo pelo id
+            var v = $('#mike').attr('type');
+
+            //pega um tipo onde o indice for igual a 2
+            var b = $('option:eq(2)').html();
+
+            //retorna um booleano para saber se um atributo possui uma classe
+            var c = $(':checkbox').hasClass("teste");
+
+
+            //pega o valorm de um campo
+            var g = $(':text').val();
+
+            alert(g);
+           
+        });
+    });
+
+</script>

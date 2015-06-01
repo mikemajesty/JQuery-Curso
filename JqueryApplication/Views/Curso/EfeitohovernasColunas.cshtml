@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "EfeitohovernasColunas";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2 class="well">Efeito hover nas Colunas</h2>
+
+<div id="d1">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Savings</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>Sum</td>
+                <td>$180</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>January</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>February</td>
+                <td>$80</td>
+            </tr>
+            <tr>
+                <td>January</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>February</td>
+                <td>$80</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+      
+        $('table thead tr th').prepend('+').css('cursor','pointer');
+        $('table thead tr th').each(function (i) {
+            $(this).click(function myfunction() {
+
+                $('table td').removeClass('hover');
+                //pais irmão e filhos
+                $(this)
+                    .parents('thead')
+                    .siblings('tbody')
+                    .children('tr')
+                    .each(function () {
+                        $(this).children('td:eq(' + i + ')').addClass('hover');
+                    });
+            });
+        });
+
+       
+    });
+</script>
+<style type="text/css">
+    .par {
+        background-color: yellow;
+    }
+
+    .impar {
+        background-color: gray;
+    }
+
+    /*Faz a mesma coisas que o jquery acima*/
+    /*.table tbody tr:hover {
+        background-color: yellow;
+    }*/
+    .hover {
+        background-color: yellow;
+    }
+</style>

@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "EfeitosBasicos";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2 class="well">Efeitos Basicos</h2>
+<b></b><b></b>
+<b></b><b></b>
+<div id="sanf1" class="sanf">
+    Show();
+</div>
+<b></b><b></b>
+<p id="p1" class="p">
+   
+</p>
+<div id="sanf2" class="sanf">
+   Hide();
+</div>
+
+<p id="p2" class="p">
+   
+</p>
+<b></b><b></b>
+<div id="sanf3" class="sanf">
+    Toggle();
+</div>
+<br />
+
+<b></b><b></b>
+<input  id="esconder" type="button" value="Esconder"/>
+<input id="mostrar" type="button" value="Mostrar" />
+<input id="switch" type="button" value="switch" />
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //sobrecarga [normal],[fast],[slow], ou um  da uma velocidade pre definida
+        //numero em milisegundos 1000mls = 1s de velocidade pelo jquery.
+        $('#esconder').click(function () {           
+            $('#sanf2').hide('normal', function () {
+                alert('Você escondeu');
+            });
+            $('#sanf1').hide('normal');
+        });
+        $('#mostrar').click(function () {
+            $('#sanf1').show('slow', function () {
+                alert('Você mostrou');
+            });
+            $('#sanf2').show('slow');
+        });
+        //é posivel colocar um função anonima nos efeitos
+        $('#switch').click(function () {
+            $('#sanf3').toggle(2000, function () {              
+                $('#switch').trigger('click');
+            });
+           
+        });
+
+    });
+</script>
+<style type="text/css">
+    .p{
+       
+        font-size:25pt;
+    }
+    .sanf {
+        width: 250px;
+        height: 30px;
+        border: dotted 2px red;
+        text-align: center;
+        font-size: 15pt;
+    }
+</style>

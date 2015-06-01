@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "SeletoresDeFiltro";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>SeletoresDeFiltro</h2>
+
+<table class="table table-hover"  cellspacing="0" id="tbl">
+    <tr>
+        <td>Nome</td>
+        <td>Idade</td>
+        <td>Estado</td>
+        <td>Cidade</td>
+       
+    </tr>
+    <tr>
+        <th>Mike</th>
+        <th>26</th>
+        <th>SP</th>
+        <th>Ibiuna</th>
+    </tr>
+    <tr>
+        <th>Natali</th>
+        <th>20</th>
+        <th>SP</th>
+        <th>Ibiuna</th>
+    </tr>
+    <tr>
+        <th>Gra</th>
+        <th>56</th>
+        <th>SP</th>
+        <th>Ibiuna</th>
+    </tr>
+    <tr>
+        <th>Natali</th>
+        <th>20</th>
+        <th>SP</th>
+        <th>Ibiuna</th>
+    </tr>
+    <tr>
+        <th>Gra</th>
+        <th>56</th>
+        <th>SP</th>
+        <th>Ibiuna</th>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    $('#tbl').css('color','green');
+    $('#tbl').css('background-color', 'gray');
+    //---------------------------------------------
+    //na 1 tr eu vou colorir de vermelho
+    //$('table tr:first').css('background-color', 'red');
+    //$('table tr:last').css('background-color', 'yellow');
+    //-----------------Faz a mesma coisa que as 2 linhas acima----------------------------
+    $('table tr:eq(0)').css('background-color', 'red');
+    $('table tr:eq(5)').css('background-color', 'yellow');
+    //-----------------Efeito zabra par----------------------------
+    $('table tr:even').css('background-color', 'pink');
+    //-----------------Efeito zabra impar----------------------------
+    $('table tr:odd').css('background-color', 'pink');
+
+    //-----------------preeche on o indeci for menor que----------------------------
+    $('table tr:lt(2)').css('background-color', 'pink');
+    //-----------------preeche on o indeci for maior que----------------------------
+    $('table tr:gt(2)').css('background-color', 'yellow');
+    //-----------------aplica em todas menos na---------------------------
+    $('table tr:not(2)').css('background-color', 'yellow');
+  
+</script>

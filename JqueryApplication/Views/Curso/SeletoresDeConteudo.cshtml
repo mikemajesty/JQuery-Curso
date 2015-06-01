@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "SeletoresDeConteudo";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>SeletoresDeConteudo</h2>
+
+
+<table class="table table-hover" cellspacing="0" id="tbl">
+    <tr>
+        <td>Nome</td>
+        <td>Idade</td>
+        <td>Estado</td>
+        <td></td>
+
+    </tr>
+    <tr>
+        <th>Mike</th>
+        <th>26</th>
+        <th>SP</th>
+        <th>Ibiuna</th>
+    </tr>
+    <tr>
+        <th>Natali</th>
+        <th>20</th>
+        <th>SP</th>
+        <th>Ibiuna</th>
+    </tr>
+    <tr>
+        <th>Gra</th>
+        <th>56</th>
+        <th>SP</th>
+        <th>Ibiuna</th>
+    </tr>
+    <tr>
+        <th>Natali</th>
+        <th>20</th>
+        <th>SP</th>
+        <th>Ibiuna</th>
+    </tr>
+    <tr>
+        <th><b>Gra</b></th>
+        <th>56</th>
+        <th>SP</th>
+        <th>Ibiuna</th>
+    </tr>
+</table>
+<style type="text/css">
+    .vazio {
+        width: 30px;border: 1px solid gray;
+        color: greenyellow; background-color:aqua;
+    }
+    .par {
+        width: 30px;
+        border: 5px solid gray;
+        color: aqua;
+        background-color: coral;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //onde a tag conter os campos abaxoi aplique a regra css
+        $('th:contains("Mike")').css('color', 'green');
+        $('td:contains("Nome")').css('color', 'blue');
+        //onde a tag for vazia aplique a regra css
+        $('td:empty').addClass('vazio');
+        //onde houver pais da tag abaixo aplique
+        $('td:parent').addClass('par');
+        //onde houver a tag abaixo aplique
+        $('th:has("b")').css('background-color', 'black');
+    });
+
+</script>
+

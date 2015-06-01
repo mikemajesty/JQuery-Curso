@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "InserirValor";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<input id="txtInserir" type="text"  placeholder="Nome"/>
+
+<input id="btnInserir" type="button" value="Inserir" onclick="InserirNoTxt();"/>
+<br />
+<br />
+<input id="txt1" type="text" placeholder="Nome" class="form-control" value="Mike Lima"/>
+<input id="txt2" type="text" placeholder="Senha" class="form-control" value="Natali Marques" />
+<br />
+<input id="btnMudarValor" type="button" value="Mudar Valor" onclick="MudarValor();" class="btn btn-primary"/>
+@*<br />
+<br />
+<input id="txt3" type="text" placeholder="Nome" class="form-control-static" value="Mike Lima" />
+<input id="txt4" type="text" placeholder="Senha" class="form-control-static" value="Natali Marques" />
+<br />
+<input id="btnMudarCor" type="button" value="Mudar Cor" onclick="MudarCor();" class="btn btn-success" />*@
+
+
+<script type="text/javascript">
+    //function MudarCor() {
+    //    $('#txt3').addClass("form-control");
+    //    $('#txt4').addClass("form-control");
+    //}
+    function MudarValor() {
+         
+        var txt1 = $('#txt1').val();
+        var txt2 = $('#txt2').val();
+        $('#txt1').val(txt2);
+        $('#txt2').val(txt1);
+
+    }
+    function InserirNoTxt() {
+
+        $('#txtInserir').val("Mike Lima");
+    }
+
+</script>

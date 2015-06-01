@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Efeitohover";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2 class="well">Efeito hover</h2>
+
+<div id="d1">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Savings</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>Sum</td>
+                <td>$180</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>January</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>February</td>
+                <td>$80</td>
+            </tr>
+            <tr>
+                <td>January</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>February</td>
+                <td>$80</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+
+        //coloca uma linha seleciona de outra cor
+        $('table tbody tr').hover(
+            function () {
+                $(this).addClass('hover');
+            }, function () {
+                $(this).removeClass('hover');
+            });
+
+    });
+</script>
+<style type="text/css">
+    .par {
+        background-color: yellow;
+    }
+
+    .impar {
+        background-color: gray;
+    }
+
+    /*Faz a mesma coisas que o jquery acima*/
+    /*.table tbody tr:hover {
+        background-color: yellow;
+    }*/
+    .hover {
+        background-color: yellow;
+    }
+</style>

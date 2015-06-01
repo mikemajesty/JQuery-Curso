@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Associacoes";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Associacões</h2>
+
+<div id="d1">
+    <p id="p1" class="teste">
+
+    </p>
+    <form>
+        Nome:<br />
+        <input type="text" id="Nome" /><br />
+        Sexo:<br />
+        <input type="radio" name="Sexo" />M<br />
+        <input type="radio" name="Sexo" />F<br />
+        Estado:<br /><select>
+            <option>Bahia</option>
+            <option>Ceara</option>
+            <option>São Paulo</option>
+        </select><br />
+        Descricao:<br /> <textarea></textarea><br />
+        <input type="button" value="Cadastrar" id="btn"/>
+    </form>
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //associar uma funcão a outra
+        $('#Nome').bind('keypress blur', function () {
+            $('#p1').text($(this).val());
+        });
+
+        $('input[type=button]').click(function () {           
+            $('#Nome').unbind('keypress');
+        });
+
+    });
+</script>
+<style type="text/css">
+    .teste {
+        border: 2px dotted red;
+    }
+</style>

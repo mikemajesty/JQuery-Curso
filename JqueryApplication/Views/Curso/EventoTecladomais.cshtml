@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "EventoTecladomais";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Evento de Teclado Mais</h2>
+
+<div id="d1">
+    <p id="p1" class="teste">
+
+    </p>
+    <form>
+        Nome:<br />
+        <input type="text" id="Nome" /><br />
+        Sexo:<br />
+        <input type="radio" name="Sexo" value="M"/>M<br />
+        <input type="radio" name="Sexo" value="F"/>F<br />
+        Estado:<br /><select>
+            <option>Bahia</option>
+            <option>Ceara</option>
+            <option>São Paulo</option>
+        </select><br />
+        Descricao:<br /> <textarea>Tdfddfdfdfd....</textarea><br />
+        <input type="button" value="Cadastrar" />
+        <input type="button" value="Resetar" id="resete" />
+    </form>
+
+</div>
+
+
+<script type="text/javascript">
+    $(':button').click(function () {
+        //forçar um submit na pagina
+        $('form').submit();
+    });
+    //quando voce seleciona o conteudo de uma tag
+    $('textarea').select(function () {
+        alert('voce seleciou o textarea');
+    });
+    //quando muda o index do select
+    $('select').change(function () {
+        $('#p1').text('Select Mudou');
+    });
+    $(':radio').change(function () {
+        $('#p1').text('Radio Mudou');
+    });
+    $('#resete').click(function () {
+        $('form').reset();
+    });
+</script>
+<style type="text/css">
+    .teste{
+        border: 2px solid red;
+    }
+
+</style>
+
+

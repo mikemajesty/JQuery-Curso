@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Acessandovaloresviaframes";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2 class="well">Acessando valores via frames</h2>
+<p>
+    You should follow
+    @@aspnet
+</p>
+<table cellpadding="10" class="table">
+    <tr>
+        <h3>Restirngindo valores não numericos</h3>
+        <h2>Restirngindo valores não numericos</h2>
+        <td>
+            <input type="text"></input>
+        </td>
+    
+        @*<td>
+
+                Limite:<span id="conta"></span>
+            </td>*@
+    </tr>
+
+</table>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        ////limita o usuario digitar somente numeros
+        //$(':input[type=text]').keydown(function (e) {
+        //    //acessa a tecla do teclado que é adiquirido pela varialvel e
+        //    var key = e.which;
+        //    var numeroValido = (key >= 48 && key <= 57);
+        //    var outrasteclas = ($.inArray(key,[8,37,38,39,40,46]) != -1);
+        //    return (numeroValido || outrasteclas);  
+           
+        //});
+
+        //limita o usuario digitar somente numeros
+        $(':input[type=text]').keyup(function (e) {
+            //acessa a tecla do teclado que é adiquirido pela varialvel e
+            var key = e.which;
+            var isNumero = ($.isNumeric($(this).val()));
+            if (isNumero) {
+                return true;
+            }
+            else {
+                var size = $(this).val().length;
+                $(this).val($(this).val().substr(0, size - 1));
+                return false;
+
+            }
+           
+        });
+    });
+</script>
+<style type="text/css">
+
+</style>

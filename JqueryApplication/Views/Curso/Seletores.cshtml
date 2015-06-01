@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Seletores";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Seletores</h2>
+
+<ul id="lista">
+    <li >Elemento 1</li>
+    <li>Elemento 2</li>
+    <li>Elemento 3</li>
+    <li>Elemento 4</li>
+    <ul>
+        <li id="el1">subElemento 1</li>/
+        <li>subElemento 2</li>
+        <li>subElemento 3</li>
+        <li>subElemento 4</li>
+
+       
+            <ul>
+                <li id="el2">subElemento 3.1</li>
+                <li>subElemento 3.2</li>
+                <li>subElemento 3.3</li>
+                <li>subElemento 3.4</li>
+            </ul>
+       
+    </ul>
+</ul>
+
+
+<script type="text/javascript">
+    $('#lista').ready(function () {
+        //aplica a regra para o filho de cada controle
+        //nessa lista os elementos filhos da lista de 
+        //li terão suas cores pintadas
+        $('#lista > li').css('color', 'red')//pega todos os filhos na tag li, atua em todos os filho
+        $('#el1 ~ li').css('color', 'red')// pega os proximos filhos apos a tag li, atua nos proximos filhos
+        $('#el2 + li').css('color', 'red')//pega o proximo a tag l1, atua no proximo filho
+    });
+
+</script>

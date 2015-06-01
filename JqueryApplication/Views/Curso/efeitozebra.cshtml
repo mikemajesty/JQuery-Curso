@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "efeitozebra";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2 class="well">efeitozebra</h2>
+
+<div id="d1">
+
+    <table class="table table-hover" cellpadding="6px" width="100%">
+        <tr>
+            <td>Nome</td>
+            <td>Endereço</td>
+            <td>Estado</td>
+        </tr>
+        <tr>
+            <th>Mike</th>
+            <th>Ibiuna</th>
+            <th>SP</th>
+        </tr>
+        <tr>
+            <th>Mike</th>
+            <th>Ibiuna</th>
+            <th>SP</th>
+        </tr>
+        <tr>
+            <th>Mike</th>
+            <th>Ibiuna</th>
+            <th>SP</th>
+        </tr>
+    </table>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        //adiciona uma efito zebrar, even = impar,odd = par
+        //$('table tr:odd').addClass("impar");
+        //$('table tr:even').addClass("par");
+
+        //adiciona o mesmo efeito que o acima, mas usando uma função
+        $('table tr:nth-child(2n - 1)').addClass("par");
+        $('table tr:nth-child(2n)').addClass("impar");
+
+    });
+</script>
+<style type="text/css">
+    .par{
+        background-color: yellow;
+
+    }
+    .impar {
+        background-color: gray;
+    }
+</style>

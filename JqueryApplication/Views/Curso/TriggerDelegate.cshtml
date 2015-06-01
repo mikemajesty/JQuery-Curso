@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "TriggerDelegate";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Trigger e Delegates</h2>
+
+<div id="d1">
+    <p id="p1" class="teste">
+    </p>
+    <form>
+        Nome:<br />
+        <input type="text" id="Nome" /><br />
+        Endereço:<br />
+        <input type="text" id="Endereco" /><br />
+        Sexo:<br />
+        <input type="radio" name="Sexo" />M<br />
+        <input type="radio" name="Sexo" />F<br />
+        Estado:<br /><select>
+            <option>Bahia</option>
+            <option>Ceara</option>
+            <option>São Paulo</option>
+        </select><br />
+        Descricao:<br /> <textarea></textarea><br />
+        <input type="button" value="add" id="btn" />
+    </form>
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //pega todos os input[type=text] e adiciona tudo
+        //digitado em um paragrafo
+        $(':text').bind('keypress', function () {
+            $('#p1').text($(this).val());
+        });
+        //adiciona um controle na tela em tempo real
+        $('#btn').click(function () {
+            $('form').append('<br><br><input type="text"/>');
+        });
+        //associa uma evento ao um componente adicionado na tela
+        //em tempo real
+        $('form').delegate(':text', 'keypress', function () {
+            $('#p1').text($(this).val());
+        });
+
+       
+
+    });
+</script>
+<style type="text/css">
+    .teste{
+        border:dotted 2px solid black;
+    }
+</style>

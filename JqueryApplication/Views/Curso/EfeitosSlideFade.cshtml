@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "EfeitosSlideFade";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2 class="well">Efeitos Slide Fade</h2>
+
+<b></b><b></b>
+<b></b><b></b>
+<div id="sanf1" class="sanf">
+    slideUp();
+</div>
+<b></b><b></b>
+<p id="p1" class="p">
+
+</p>
+<div id="sanf2" class="sanf">
+   slideDown();
+</div>
+
+<p id="p2" class="p">
+
+</p>
+<b></b><b></b>
+<div id="sanf3" class="sanf">
+    slideToggle();
+</div>
+<br /><br />
+<div id="fade" class="sanf">
+    fadeIn() e fadeOut();;
+</div>
+<br />
+<br />
+<div id="sanf4" class="sanf">
+    fadeToggle();
+</div>
+<br /><br />
+<br />
+<br />
+<div id="sanf5" class="sanf">
+    fadeTo();
+</div>
+<br /><br />
+<input id="esconder" type="button" value="slideUp();" />
+<input id="mostrar" type="button" value="slideDown();" />
+<input id="switch" type="button" value="slideToggle();" />
+<input id="bfadein" type="button" value="fadiIn();" />
+<input id="bfadeout" type="button" value="fadeOut();" />
+<input id="bfadetoggle" type="button" value="fadeToggle();" />
+<input id="bfadeto" type="button" value="fadeTo();" />
+<script type="text/javascript">
+    $(document).ready(function () {
+        //sobrecarga [normal],[fast],[slow], ou um  da uma velocidade pre definida
+        //numero em milisegundos 1000mls = 1s de velocidade pelo jquery.
+        $('#esconder').click(function () {
+            $('#sanf2').slideUp(function () {
+                alert('Você slideUp');
+            });
+            $('#sanf1').hide('normal');
+        });
+
+        //pode definir quanto tem leva o evento
+        $('#mostrar').click(function () {
+            $('#sanf1').slideDown(5000, function () {
+                alert('Você slideDown');
+            });
+            $('#sanf2').show('slow');
+        });
+        $('#switch').click(function () {
+            $('#sanf3').slideToggle(5000, function () {
+                alert('Você slideToggle');
+            });
+            $('#sanf2').show('slow');
+        });
+        //é posivel colocar um função anonima nos efeitos
+        $('#bfadein').click(function () {
+            $('#fade').fadeIn(2000);
+           
+        });
+        
+        $('#bfadeout').click(function () {
+            $('#fade').fadeOut(2000);
+           
+        });
+        $('#bfadetoggle').click(function () {
+            $('#sanf4').fadeToggle(3000);
+          
+        });
+        $('#bfadeto').click(function () {
+            //deixa tranparente de acordo com a % passada, no caso 10% de visibilidade            
+            $('#sanf5').fadeTo(3000,0.1);
+
+        });
+    });
+</script>
+<style type="text/css">
+    .p {
+        font-size: 25pt;
+    }
+
+    .sanf {
+        width: 250px;
+        height: 30px;
+        border: dotted 2px red;
+        text-align: center;
+        font-size: 15pt;
+    }
+</style>

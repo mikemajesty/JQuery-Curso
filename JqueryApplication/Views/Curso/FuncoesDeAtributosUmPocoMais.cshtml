@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "FuncoesDeAtributosUmPocoMais";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Funcoes De Atributos Um Poco Mais</h2>
+
+<div id="div">
+    <br />
+     Esse Botão Executa uma ação
+    
+
+
+</div>
+<input type="button" value="Executar" id="btnExec" class="text-center" />
+
+
+<script type="text/javascript">
+    $(':button').click(function () {
+        $('div').toggleClass('teste');
+        //retorna o valor dentro de um inner html sem as tags
+        var v = $('div').text();
+        //substitui o valor de uma tag pot outro valor
+        $('#div').replaceWith('<b>Mike Rodrigues De Lima</b>');
+    });
+
+</script>
+<style type="text/css">
+    .teste {
+        border: 2px solid gray;
+    }
+</style>

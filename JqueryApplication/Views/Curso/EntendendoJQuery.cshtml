@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "EntendendoJQuery";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>EntendendoJQuery</h2>
+
+<a href="#">Click</a>
+<br />
+<input type="text" id="txt" value=""/>
+
+
+<script type="text/javascript">
+    $('a').click(function () {
+
+        //se não colocar o val ele retorna o tipo do
+        //objeto que sera object, o val representa a
+        //propriedade .text; ou toString();
+        //var valor = $('#txt').val();
+
+        //---------------------CSS Puro-------------------------
+       // var valor = $('#txt').css('background-color','red');
+        //-------------------Bootstrap---------------------------
+        var valor = $('#txt').css('background-color', 'red').hide().val();
+
+        alert(valor);
+    });
+</script>

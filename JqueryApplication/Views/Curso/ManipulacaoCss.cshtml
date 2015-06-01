@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "ManipulacaoCss";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Manipulação De Css</h2>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(':submit').click(function () {
+            //faz a mesma coisa que o abaixo
+            //$('img').css('width', '500px').css('height', '5px');
+            //$('img').css('border', '5px solid green');
+            $('img').css({width: '500px', height: '50px',border: '5px solid green'});
+           
+        });
+    });
+</script>
+<style type="text/css">
+    .teste{
+        padding: 30px;
+         margin: 20px;
+    }
+</style>
+<div class="teste" id="d1">
+    <p>
+        <img src="~/Source/foto.jpg" />
+    </p>
+</div>
+<input  type="submit" value="Testar"/>

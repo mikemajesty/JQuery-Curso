@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "FuncoesDeManipulacao";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2 class="text-center">Funcoes De Manipulacao</h2>
+
+<span>Mike Rodrigues de lima</span>
+<div id="dd1" class="teste">
+    <p id="paragrafo1"></p>
+</div>
+
+<button type="button" value="Cadastrar" id="btnCadastrar" title="Button">Cadastrar</button>
+
+<script type="text/javascript">
+   
+    $(':button').click(function Append() {
+        //$('#div1').append($('span'));
+        
+
+        var imagem = $('<img/>', {
+            src: '/Source/foto.jpg', mouseover: function () {
+                alert('Eu estou sobre a foto')
+            }
+        });
+        //inclui um objeto[tag,text] dentro de uma tag mapeada
+        //$('#dd1').prepend(imagem);
+        //inclui um objeto[tag,text] dentro de uma tag mapeada
+        //$('#dd1').append(imagem);
+        //inclui um objeto[tag,text] após uma tag mapeada
+        //$('#dd1').after(imagem);
+        //inclui um objeto[tag,text] antes uma tag mapeada
+         //$('#dd1').before(imagem);
+        //envolve um objeto[tag,text] em uma tag mapeada,envolve o objeto recebido
+        //dentro do objeto com o modificador wrap
+        //$('#dd1').wrap(imagem);
+        //faz uma copia de uma tag e a exibe
+        $('#dd1').append($('#dd1').clone());
+        });
+       
+    
+</script>
+<style type="text/css">
+    .teste {
+        border: solid 1px red;
+    }
+</style>

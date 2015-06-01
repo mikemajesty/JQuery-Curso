@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Append";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Append</h2>
+
+<span>Mike Rodrigues de lima</span>
+<div id="div1" class="teste">
+    <p id="paragrafo1"></p>
+</div>
+
+<input  type="button" value="Button" onclick="Append();"/>
+
+
+<script type="text/javascript">
+    //inclui um objeto[tag,text] dentro de uma tag mapeada
+    $(':button').click(function Append() {
+        $('#div1').append($('span'));
+        var imagem = $('<img/>', {
+            src: '/Source/foto.jpg'
+            , border: 1
+            , mouseover: function () {
+                alert('Rodrigo');
+            }
+        });
+        $('div').append(imagem);
+    });
+</script>
+<style type="text/css">
+    .teste{
+        border: solid 1px red;
+    }
+</style>

@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "EventoTeclado";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Evento de Teclado</h2>
+
+
+<div id="d1" >
+    <p id="p1" class="teste">
+
+    </p>
+    <form>
+        Nome:<br />
+        <input type="text" id="Nome" /><br />
+        Sexo:<br />
+        <input type="radio" name="Sexo" />M<br />
+        <input type="radio" name="Sexo" />F<br />
+        Estado:<br /><select>
+            <option>Bahia</option>
+            <option>Ceara</option>
+            <option>São Paulo</option>
+        </select><br />
+        Descricao:<br /> <textarea></textarea><br />
+        <input type="button" value="Cadastrar" />
+    </form>
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //keyup quando teclar em alguma tecla exibe o conteudo digitado em um alert
+        $('#Nome').keyup(function () {
+            //this se usa para busca o atributo principal ja setado
+            $('#p1').text($(this).val());
+            
+        }).focus(function () {
+            alert('Voce ganhou o foco');
+        }).blur(function myfunction() {
+            $(':button').val('Voce Perdeu O Foco');
+        });
+
+        //$('#Nome').keydown(function () {
+            // key down quando vc tecla pela segunda vez ele inicia o avento
+           //keypress quando a tecla e pressionada = keydown
+        //    $('#p1').text($(this).val());
+
+        //});
+    });
+    
+   
+</script>
+<style type="text/css">
+    .teste {
+        border: 2px dotted red;
+    }
+</style>

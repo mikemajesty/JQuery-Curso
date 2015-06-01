@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "LimparTextBox";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+
+<input type="text" placeholder="Nome" id="txtNome" />
+
+<input id="btnZerar" type="button" value="Zerar" onclick="Limpar();"/>
+
+
+<script type="text/javascript">
+    
+    function Limpar() {
+        $('#txtNome').val("");
+    }
+   
+
+</script>

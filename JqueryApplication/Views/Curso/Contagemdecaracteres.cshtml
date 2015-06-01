@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Contagemdecaracteres";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<meta  charset="utf-8"/>
+<h2 class="well">Contagem de caracteres</h2>
+
+ <h5>Digite no maximo 50 char</h5>
+
+<span id="max"></span>
+<table cellpadding="10" class="table">
+    <tr>
+        <h3>Meu twite rapido!</h3>
+        <td>
+            <textarea cols="20" rows="5"></textarea>
+        </td>
+        <td>
+
+            Total de Caracter:<span id="cont"></span>
+        </td>
+        @*<td>
+
+            Limite:<span id="conta"></span>
+        </td>*@
+    </tr>
+
+</table>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('textarea').bind('input keyup paste',function () {
+            var total = $(this).val().length;
+            var limite = 50;
+            var disponivel = limite - total;
+          
+            if (disponivel < 0) {
+                $('#max').text('Limite maximo atingido');
+                var temp = $(this).val().substr(0, limite);
+                $(this).val(temp);
+                disponivel = 0;
+            }
+            else {
+                $('#max').text('');
+            }
+            $('#cont').text(disponivel);
+        });
+    });
+</script>
+<style type="text/css">
+    .teste {
+    }
+    .sumi{
+        display:none;
+    }
+</style>

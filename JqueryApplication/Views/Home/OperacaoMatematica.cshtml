@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "OperacaoMatematica";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<br />
+<br />
+<input id="txt1" type="text" class="form-control" placeholder="Valor 1" />
+<br />
+<input id="txt2" type="text" class="form-control" placeholder="valor 2" />
+<br />
+<br />
+<input id="txtResult" type="text" class="form-control-static" placeholder="Resultado" />
+<br />
+<br />
+<br />
+<input id="btnSomar" type="button" value="+" class="btn btn-primary" onclick="Somar();" />
+<br />
+<br />
+<input id="btnSubtrair" type="button" value="-" class="btn btn-primary" onclick="Subtrair();" />
+<br />
+<br />
+<input id="btnDividir" type="button" value="/" class="btn btn-primary" onclick="Dividir();" />
+<br />
+<br />
+<input id="btnMultiplicar" type="button" value="*" class="btn btn-primary" onclick="Multiplicar();" />
+<script type="text/javascript">
+    function Somar() {
+        var valor1 = $('#txt1').val();
+        var valor2 = $('#txt2').val();
+
+        var result = valor1 + valor2;
+            
+        $('#txtResult').val(result);
+    }
+    function Subtrair() {
+        var valor1 = $('#txt1').val();
+        var valor2 = $('#txt2').val();
+
+        var result = valor1 - valor2;
+
+        $('#txtResult').val(result);
+    }
+    function Dividir() {
+        var valor1 = $('#txt1').val();
+        var valor2 = $('#txt2').val();
+
+        var result = valor1 / valor2;
+
+        $('#txtResult').val(result);
+    }
+    function Multiplicar() {
+        var valor1 = $('#txt1').val();
+        var valor2 = $('#txt2').val();
+
+        var result = valor1 * valor2;
+
+        $('#txtResult').val(result);
+    }
+</script>
